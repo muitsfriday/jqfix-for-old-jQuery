@@ -1,6 +1,6 @@
 # jqfix-for-old-jQuery
 ## V 0.1
-### legacy fix support for jQuery1.4
+### legacy fix support for jQuery
 
 jQuery Old Support.
 

@@ -104,4 +104,72 @@
 		};
 	}
 
+	// add support for prop.
+	if(typeof $.fn.prop === 'undefined'){
+
+		$.fn.prop = function(attr, value){
+
+			if(typeof value === 'undefined'){
+
+				if(typeof attr === 'string'){
+
+					if(['checked', 'selected', 'disabled', 'readonly'].indexOf(attr.toLowerCase()) >= 0){
+						var attrval = $(this).attr(attr);
+						if(typeof attrval !== 'undefined'){
+							if (typeof attrval === 'string') return attrval.toLowerCase() == attr.toLowerCase();
+						}
+						return attrval;
+					}
+
+					return $(this).attr(attr);
+				}
+				else if(typeof attr === 'object'){
+
+					for(var i in attr){
+						$(this).prop(i, attr[i]);
+					}
+
+					return this;
+				}
+
+			} 
+			else if(typeof value !== 'function'){
+
+				if(typeof attr === 'string'){
+
+					if(['checked', 'selected', 'disabled', 'readonly'].indexOf(attr.toLowerCase()) >= 0){
+						return $(this).attr(attr, value == attr.toLowerCase() ? attr.toLowerCase() : value ? true : false);
+					}
+
+					return $(this).attr(attr, value);
+				}
+
+			}
+			// typeof value === 'function'
+			else {
+
+				if(typeof attr === 'string'){
+
+					var i = 0;
+
+					this.each(function(){
+						var $ele = $(this);
+						if(['checked', 'selected', 'disabled', 'readonly'].indexOf(attr.toLowerCase()) >= 0){
+							var val = $ele.attr(attr, value == attr.toLowerCase() ? attr.toLowerCase() : value ? true : false);
+							value.apply($ele, [i++, val]);
+						}
+						else{
+							var val = $ele.attr(attr, value);
+							value.apply($ele, [i++, val]);
+						}
+					});
+
+					return this;
+				}
+
+			}
+
+		};
+	}
+
 })(jQuery);

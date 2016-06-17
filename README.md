@@ -5,7 +5,7 @@
 jQuery Old Support.
 
 ##.on()
-jQuery older version than 1.7 can use .on() for bind(live) an event.
+jQuery older version than 1.7 can use .on() to bind(live) an event.
 ```
 $('body').on('click', function(e){
 	console.log('on click body', e);
@@ -13,13 +13,13 @@ $('body').on('click', function(e){
 ```
 
 ##.off()
-jQuery older version than 1.7 can use .off() for unbind(die) an event.
+jQuery older version than 1.7 can use .off() to unbind(die) an event.
 ```
 $('body').off('click');
 ```
 
 ##.prop()
-jQuery older version than 1.6 can use .prop() for getting a attribute and properties of elements
+jQuery older version than 1.6 can use .prop() to getting a attribute and properties of elements
 ```
 // get property value
 $('input').prop('type');

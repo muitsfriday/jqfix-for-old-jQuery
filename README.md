@@ -8,7 +8,7 @@ jQuery Old Support.
 jQuery older version than 1.7 can use .on() for bind(live) an event.
 ```
 $('body').on('click', function(e){
-	console.log('on click body 2', e);
+	console.log('on click body', e);
 });
 ```
 

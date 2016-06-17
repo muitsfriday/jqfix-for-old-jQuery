@@ -17,3 +17,22 @@ jQuery older version than 1.7 can use .off() for unbind(die) an event.
 ```
 $('body').off('click');
 ```
+
+##.prop()
+jQuery older version than 1.6 can use .prop() for getting a attribute and properties of elements
+```
+// get property value
+$('input').prop('type');
+// set property value
+$('input').prop('data-id', 10);
+// get properties value of more than one elements
+$('input').prop('type', function(i, val){ 
+	# do sone thing with attr value {val} at element index {i} with element {this}
+});
+// set properties
+$('input').prop({
+	'class' : 'input-style',
+	'readonly' : false
+});
+```
+

@@ -2,6 +2,8 @@
 ## V 0.1
 ### legacy fix support for jQuery
 
+I build this because I want to include some piece code that build with jQuery version 1.9+ but the main page is using legacy jQuery (1.4) so here a quick mini fix of jQuery function to partial support them.
+
 jQuery Old Support.
 
 ##.on()
